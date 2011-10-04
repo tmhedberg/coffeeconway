@@ -5,4 +5,6 @@ It's [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Lif
 
 To build, install [CoffeeScript](http://jashkenas.github.com/coffee-script/) and run `coffee -c conway.coffee`. This will generate `conway.js`.
 
+There's also a [live demo](http://tmh.cc/conway/conway.html) in case you just want to play around with it.
+
 Then open up `conway.html` in your browser and start playing with gliders and stuff. In case it's not obvious, you can click on the grid cells to manually toggle them on and off.
