@@ -7,6 +7,7 @@ $ ->
     INTERVAL = 100  # Interval between simulation steps (ms)
 
     canvas = $ '#canvas'
+    counter = $("#counter-value")
     ctx = canvas[0].getContext '2d'
     running = null
     cells = []
@@ -23,10 +24,13 @@ $ ->
             clearInterval running
             $('#step').removeAttr 'disabled'
             running = null
-    $('#randomize').click -> randomize()
+    $('#randomize').click ->
+        randomize()
+        counter.html("0")
     $('#clear').click ->
         clear()
         $('#run').click() if running
+        counter.html("0")
     canvas.click (e) ->
         x = Math.floor (e.pageX - canvas.offset().left) / GRID_DIM
         y = Math.floor (e.pageY - canvas.offset().top) / GRID_DIM
@@ -92,3 +96,5 @@ $ ->
                     renderCell x, y, next_cells[x][y]
 
         cells = next_cells
+
+        counter.html(parseInt(counter.html()) + 1)

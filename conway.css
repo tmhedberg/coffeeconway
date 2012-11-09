@@ -1,4 +1,12 @@
+#wrapper {
+    width: 1000px;
+}
+
 canvas {
     display: block;
     cursor: crosshair;
+}
+
+#counter {
+    float: right;
 }
